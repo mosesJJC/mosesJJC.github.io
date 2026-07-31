@@ -1,41 +1,41 @@
-// Wait for DOM to fully load before initializing scripts
+// Wait for DOM to fully load before running scripts
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Dark Mode Toggle Logic
+    // 1. Dark Mode / Theme Toggle Logic
     const darkModeBtn = document.getElementById("darkModeBtn");
     
     darkModeBtn.addEventListener("click", () => {
         // Toggle the 'light-mode' class on the body element
         document.body.classList.toggle("light-mode");
         
-        // Update button text depending on current active mode
+        // Update button text accordingly
         if (document.body.classList.contains("light-mode")) {
-            darkModeBtn.textContent = "Light Mode";
-        } else {
             darkModeBtn.textContent = "Dark Mode";
+        } else {
+            darkModeBtn.textContent = "Light Mode";
         }
         
-        console.log("Theme toggled successfully.");
+        console.log("Theme switched successfully.");
     });
 
-    // 2. Working Text Boxes & Contact Form Handling
+    // 2. Contact Form Handling & Live Input Processing
     const contactForm = document.getElementById("contactForm");
     const formFeedback = document.getElementById("formFeedback");
 
     contactForm.addEventListener("submit", (event) => {
-        // Prevent default page reload behavior on submit
+        // Prevent default browser reload
         event.preventDefault();
 
-        // Capture values typed into the text boxes
+        // Capture user inputs from text boxes
         const userName = document.getElementById("nameInput").value;
         const userMessage = document.getElementById("msgInput").value;
 
-        // Display a dynamic confirmation message back to the user
-        formFeedback.textContent = `Thanks, ${userName}! Your message has been transmitted successfully.`;
+        // Display customized confirmation feedback
+        formFeedback.textContent = `Transmission received, ${userName}! Signal locked successfully.`;
         
-        // Reset the text input boxes clear for a new entry
+        // Reset the form fields for clean new entries
         contactForm.reset();
         
-        console.log(`Form submitted by: ${userName} with message: "${userMessage}"`);
+        console.log(`Contact transmission logged from: ${userName} | Message length: ${userMessage.length} characters`);
     });
 });
