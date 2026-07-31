@@ -9,18 +9,28 @@
 </head>
 <body>
 
-    <!-- Main header section -->
+    <!-- Header containing our navigation menu, search bar, and dark mode toggle -->
     <header>
-        <h1>Welcome to My Website!</h1>
-        <p>Built with HTML, CSS, and JavaScript, and hosted on GitHub Pages.</p>
+        <nav class="navbar">
+            <div class="logo">MySite</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="darkModeToggle">🌙 Dark Mode</button>
+            </div>
+        </nav>
     </header>
 
-    <!-- Interactive section -->
-    <main>
+    <!-- Main interactive content section -->
+    <main id="home">
         <section class="card">
             <h2>Interactive Zone</h2>
-            <p>Click the button below to see JavaScript in action!</p>
-            <button id="colorBtn">Click Me!</button>
+            <p>Click the button below to change the accent color!</p>
+            <button id="colorBtn">Change Color</button>
         </section>
     </main>
 
