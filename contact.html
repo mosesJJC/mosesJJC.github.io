@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIS // Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Shared Navigation Header -->
+    <header class="guitar-header">
+        <div class="nav-brand">AXIS<span class="highlight">.OG</span></div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="about.html" class="nav-item">About</a>
+            <a href="gallery.html" class="nav-item">Rigs & Gallery</a>
+            <a href="contact.html" class="nav-item active">Contact</a>
+        </nav>
+        <button id="darkModeBtn" class="guitar-btn toggle-btn">Light Mode</button>
+    </header>
+
+    <!-- Contact & Social Section -->
+    <main>
+        <section class="content-section animate-slide-up">
+            <h2 class="section-title">Establish Connection</h2>
+            <p class="section-desc">Send a transmission message or check out external frequencies.</p>
+            
+            <div class="social-grid" style="margin-bottom: 2.5rem;">
+                <a href="https://github.com" target="_blank" class="guitar-btn social-card">GitHub Repository</a>
+                <a href="https://bandcamp.com" target="_blank" class="guitar-btn social-card">Bandcamp / Audio</a>
+                <a href="https://discord.com" target="_blank" class="guitar-btn social-card">Discord Community</a>
+            </div>
+
+            <div class="card form-card">
+                <form id="contactForm">
+                    <div class="input-group">
+                        <label for="nameInput">Your Call Sign / Name:</label>
+                        <input type="text" id="nameInput" placeholder="Enter name..." required>
+                    </div>
+                    <div class="input-group">
+                        <label for="msgInput">Transmission Message:</label>
+                        <textarea id="msgInput" rows="4" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="guitar-btn primary-btn">Broadcast Transmission</button>
+                </form>
+                <p id="formFeedback" class="feedback-text"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AXIS Portfolio. Engineered for Clean Tone & Clear Code.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
