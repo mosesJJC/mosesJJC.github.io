@@ -3,113 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Epic Edition</title>
+    <title>AXIS // Progressive Metal & Code</title>
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Epic Games Style Header & Navigation -->
-    <header class="epic-header">
-        <div class="nav-brand">PORTFOLIO.GG</div>
+    <!-- Electric Guitar / Pro-Metal Styled Navigation Header -->
+    <header class="guitar-header">
+        <div class="nav-brand">AXIS<span class="highlight">.OG</span></div>
         <nav class="nav-links">
             <a href="#main" class="nav-item">Main Menu</a>
             <a href="#about" class="nav-item">About</a>
-            <a href="#who-we-are" class="nav-item">Who We Are</a>
-            <a href="#team" class="nav-item">Team</a>
-            <a href="#gallery" class="nav-item">Gallery</a>
+            <a href="#gallery" class="nav-item">Rigs & Gallery</a>
             
-            <!-- Epic Games Style Dropdown Menu -->
+            <!-- Dropdown Menu with Transparent Glass Hue -->
             <div class="dropdown">
-                <button class="epic-btn drop-btn">More Hub ▼</button>
+                <button class="guitar-btn drop-btn">Hub Menu ▼</button>
                 <div class="dropdown-content">
                     <a href="#social">Social Links</a>
-                    <a href="#contact">Contact Form</a>
-                    <a href="#help">Help & Support</a>
+                    <a href="#contact">Contact Transmission</a>
+                    <a href="#help">Help Center</a>
                 </div>
             </div>
         </nav>
         
-        <!-- Dark Mode Toggle Button -->
-        <button id="darkModeBtn" class="epic-btn toggle-btn">Dark Mode</button>
+        <!-- Theme Toggle Button -->
+        <button id="darkModeBtn" class="guitar-btn toggle-btn">Light Mode</button>
     </header>
 
     <!-- Main Content Sections -->
     <main>
-        <!-- Main Menu Section -->
+        <!-- Main Menu / Hero Section -->
         <section id="main" class="hero-section">
-            <div class="hero-content">
-                <h1>LEVEL UP YOUR WEB EXPERIENCE</h1>
-                <p>Welcome to my personal portfolio. Built for performance, style, and interactivity.</p>
-                <a href="#about" class="epic-btn primary-btn">Explore Profile</a>
+            <div class="hero-content animate-fade-in">
+                <span class="sub-badge">POLYRHYTHMIC CODE & TONES</span>
+                <h1>MASTERING THE FRETBOARD OF THE WEB</h1>
+                <p>Welcome to my personal portfolio. Fusing technical precision, progressive metal aesthetics, and clean UI engineering.</p>
+                <div class="hero-actions">
+                    <a href="#about" class="guitar-btn primary-btn">Initialize Profile</a>
+                    <a href="#gallery" class="guitar-btn">View Gear Rigs</a>
+                </div>
             </div>
         </section>
 
         <!-- About Me Section -->
         <section id="about" class="content-section">
-            <h2>About Me</h2>
-            <div class="card">
-                <p>Hey there! I'm a passionate young developer learning how to craft immersive digital experiences. When I'm not coding custom UI layouts, you can find me exploring game development and modern web tech.</p>
-            </div>
-        </section>
-
-        <!-- Who We Are Section -->
-        <section id="who-we-are" class="content-section">
-            <h2>Who We Are</h2>
-            <div class="card">
-                <p>We are a collective of digital creators, designers, and innovators pushing the boundaries of what is possible inside a standard web browser.</p>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section id="team" class="content-section">
-            <h2>Our Team</h2>
-            <div class="team-grid">
-                <div class="card team-card">
-                    <h3>Alex Chen</h3>
-                    <p>Lead Developer & Architect</p>
-                </div>
-                <div class="card team-card">
-                    <h3>Sarah Jenkins</h3>
-                    <p>UI/UX Design Director</p>
+            <h2 class="section-title">About The Developer</h2>
+            <div class="card about-card animate-slide-up">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>When I'm not writing clean semantic code, you can find me deep in the world of progressive metal, analyzing complex 7/8 time signatures, and dialing in pristine guitar tone simulations.</p>
+                        <p>This space blends my two greatest passions: relentless technical evolution on the fretboard and modern web development.</p>
+                    </div>
+                    <div class="spec-sheet">
+                        <h3>// RIG SPECIFICATIONS</h3>
+                        <ul>
+                            <li><span>Primary Stack:</span> HTML5, CSS3, JavaScript</li>
+                            <li><span>Musical Style:</span> Progressive Metal / Djent</li>
+                            <li><span>Design Philosophy:</span> Clean, Mild, & High-Performance</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
+        <!-- Photo Gallery Section (Rigs & Workspace) -->
         <section id="gallery" class="content-section">
-            <h2>Photo Gallery</h2>
+            <h2 class="section-title">Rigs & Gallery</h2>
+            <p class="section-desc">A visual glimpse into my hardware setups and workspace environments.</p>
             <div class="gallery-grid">
-                <div class="gallery-item">Project Alpha</div>
-                <div class="gallery-item">Cyberpunk UI</div>
-                <div class="gallery-item">Code Workspace</div>
+                <div class="gallery-card animate-slide-up">
+                    <div class="gallery-placeholder">
+                        <span>7-String Baritone</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Drop-G Workhorse</h3>
+                        <p>Custom scale length built for precision low-end clarity.</p>
+                    </div>
+                </div>
+                <div class="gallery-card animate-slide-up">
+                    <div class="gallery-placeholder">
+                        <span>Neural Modeler</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Digital Tone Lab</h3>
+                        <p>Impulse responses, custom cab sims, and clean processing chains.</p>
+                    </div>
+                </div>
+                <div class="gallery-card animate-slide-up">
+                    <div class="gallery-placeholder">
+                        <span>Dual-Screen Battlestation</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Development Hub</h3>
+                        <p>Optimized workspace for layout rendering and script debugging.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Social Links Section -->
         <section id="social" class="content-section">
-            <h2>Social Hub</h2>
-            <div class="social-links">
-                <a href="#" class="epic-btn">GitHub</a>
-                <a href="#" class="epic-btn">Discord</a>
-                <a href="#" class="epic-btn">Twitter / X</a>
+            <h2 class="section-title">Social Frequencies</h2>
+            <div class="social-grid">
+                <a href="#" class="guitar-btn social-card">GitHub Repository</a>
+                <a href="#" class="guitar-btn social-card">Bandcamp / Audio</a>
+                <a href="#" class="guitar-btn social-card">Discord Community</a>
             </div>
         </section>
 
         <!-- Contact Form Section with Working Text Boxes -->
         <section id="contact" class="content-section">
-            <h2>Contact Form</h2>
-            <div class="card form-card">
+            <h2 class="section-title">Establish Connection</h2>
+            <div class="card form-card animate-slide-up">
                 <form id="contactForm">
                     <div class="input-group">
-                        <label for="nameInput">Your Name:</label>
-                        <input type="text" id="nameInput" placeholder="Enter your name..." required>
+                        <label for="nameInput">Your Call Sign / Name:</label>
+                        <input type="text" id="nameInput" placeholder="Enter name..." required>
                     </div>
                     <div class="input-group">
-                        <label for="msgInput">Your Message:</label>
-                        <textarea id="msgInput" rows="4" placeholder="Type your message here..." required></textarea>
+                        <label for="msgInput">Transmission Message:</label>
+                        <textarea id="msgInput" rows="4" placeholder="Write your message here..." required></textarea>
                     </div>
-                    <button type="submit" class="epic-btn primary-btn">Send Transmission</button>
+                    <button type="submit" class="guitar-btn primary-btn">Broadcast Transmission</button>
                 </form>
                 <p id="formFeedback" class="feedback-text"></p>
             </div>
@@ -117,16 +134,16 @@
 
         <!-- Help Section -->
         <section id="help" class="content-section">
-            <h2>Help & Support</h2>
-            <div class="card">
-                <p>Need assistance navigating the site? Check out our quick guides or reach out through the contact transmission box above.</p>
+            <h2 class="section-title">Help Center</h2>
+            <div class="card animate-slide-up">
+                <p>Need assistance navigating or reviewing code? Use the connection portal above to send a direct log entry, or check the menu headers to cycle through sections.</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Portfolio.GG. Inspired by Epic Design Systems.</p>
+        <p>&copy; 2026 AXIS Portfolio. Engineered for Clean Tone & Clear Code.</p>
     </footer>
 
     <!-- Link to external JavaScript -->
