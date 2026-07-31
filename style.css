@@ -1,37 +1,41 @@
-// Wait for the HTML document to fully load before running JavaScript
-document.addEventListener('DOMContentLoaded', () => {
+// Wait for DOM to fully load before initializing scripts
+document.addEventListener("DOMContentLoaded", () => {
     
-    // --- Dark Mode Toggle Functionality ---
-    const darkModeToggle = document.getElementById('darkModeToggle');
+    // 1. Dark Mode Toggle Logic
+    const darkModeBtn = document.getElementById("darkModeBtn");
     
-    darkModeToggle.addEventListener('click', () => {
-        // Toggle the 'dark-mode' class on the body element
-        document.body.classList.toggle('dark-mode');
+    darkModeBtn.addEventListener("click", () => {
+        // Toggle the 'light-mode' class on the body element
+        document.body.classList.toggle("light-mode");
         
-        // Update the button icon and text depending on the current mode
-        if (document.body.classList.contains('dark-mode')) {
-            darkModeToggle.textContent = '☀️ Light Mode';
+        // Update button text depending on current active mode
+        if (document.body.classList.contains("light-mode")) {
+            darkModeBtn.textContent = "Light Mode";
         } else {
-            darkModeToggle.textContent = '🌙 Dark Mode';
+            darkModeBtn.textContent = "Dark Mode";
         }
+        
+        console.log("Theme toggled successfully.");
     });
 
-    // --- Search Bar Functionality ---
-    const searchInput = document.getElementById('searchInput');
-    
-    searchInput.addEventListener('keyup', (event) => {
-        const query = event.target.value.toLowerCase();
-        // Logs user input to the developer console for real-time tracking
-        console.log('User searched for: ' + query);
+    // 2. Working Text Boxes & Contact Form Handling
+    const contactForm = document.getElementById("contactForm");
+    const formFeedback = document.getElementById("formFeedback");
+
+    contactForm.addEventListener("submit", (event) => {
+        // Prevent default page reload behavior on submit
+        event.preventDefault();
+
+        // Capture values typed into the text boxes
+        const userName = document.getElementById("nameInput").value;
+        const userMessage = document.getElementById("msgInput").value;
+
+        // Display a dynamic confirmation message back to the user
+        formFeedback.textContent = `Thanks, ${userName}! Your message has been transmitted successfully.`;
+        
+        // Reset the text input boxes clear for a new entry
+        contactForm.reset();
+        
+        console.log(`Form submitted by: ${userName} with message: "${userMessage}"`);
     });
-
-    // --- Interactive Button Functionality ---
-    const colorBtn = document.getElementById('colorBtn');
-    const colors = ['#ff9a9e', '#fad0c4', '#a1c4fd', '#c2e9fb', '#fbc531'];
-
-    colorBtn.addEventListener('click', () => {
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        colorBtn.style.backgroundColor = randomColor;
-    });
-
 });
