@@ -1,145 +1,236 @@
-/* CSS Variables to easily handle Light and Dark Mode themes */
+/* Color Palette Variables: Black, White, & Blue Highlights */
 :root {
-    --bg-color: #f4f7f6;
-    --text-color: #333333;
+    --bg-color: #0f0f11;
+    --card-bg: #18181b;
+    --text-color: #ffffff;
+    --text-muted: #a1a1aa;
+    --accent-blue: #0074e4;
+    --accent-blue-hover: #1a85ff;
+    --border-color: #27272a;
+    --dropdown-bg: rgba(24, 24, 27, 0.85); /* Transparent hue effect */
+}
+
+/* Light Theme Override Class */
+body.light-mode {
+    --bg-color: #f4f4f5;
     --card-bg: #ffffff;
-    --nav-bg: linear-gradient(135deg, #6e8efb, #a777e3);
-    --primary-btn: #6e8efb;
-    --primary-btn-hover: #5c7cfa;
+    --text-color: #09090b;
+    --text-muted: #52525b;
+    --accent-blue: #0066cc;
+    --accent-blue-hover: #0052a3;
+    --border-color: #e4e4e7;
+    --dropdown-bg: rgba(255, 255, 255, 0.9);
 }
 
-/* Dark mode theme variables */
-body.dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #f4f7f6;
-    --card-bg: #2d2d2d;
-    --nav-bg: linear-gradient(135deg, #2c3e50, #4ca1af);
-    --primary-btn: #4ca1af;
-    --primary-btn-hover: #3a8b96;
-}
-
-/* Global styles with smooth transitions for theme switching */
+/* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
+    scroll-behavior: smooth;
 }
 
-/* Header & Navigation Bar Styling */
-header {
-    background: var(--nav-bg);
-    color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.navbar {
+/* Epic Games Style Header */
+.epic-header {
+    background-color: var(--card-bg);
+    border-bottom: 2px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.nav-brand {
+    font-weight: 900;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.2s;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
-/* Search bar and button layout inside nav */
-.nav-actions {
-    display: flex;
-    gap: 10px;
     align-items: center;
 }
 
-#searchInput {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    outline: none;
+.nav-item {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
 }
 
-#searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+.nav-item:hover {
+    color: var(--accent-blue);
 }
 
-/* Buttons styling */
-#darkModeToggle, .card button {
-    background-color: var(--primary-btn);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 0.95rem;
-    border-radius: 6px;
+/* Epic Games Style Buttons & Dropdown */
+.epic-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
-#darkModeToggle:hover, .card button:hover {
-    background-color: var(--primary-btn-hover);
+.epic-btn:hover {
+    border-color: var(--accent-blue);
+    background-color: rgba(0, 116, 228, 0.1);
 }
 
-/* Main content layout */
-main {
-    flex: 1;
+.primary-btn {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-blue-hover);
+}
+
+/* Dropdown Menu with Transparent Hue */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--dropdown-bg);
+    backdrop-filter: blur(10px); /* Glassmorphism transparency hue */
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--accent-blue);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sections Layout */
+.content-section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-section {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(0, 116, 228, 0.15) 0%, transparent 70%);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Cards & Grid Systems */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.team-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+/* Working Text Boxes / Contact Form Styling */
+.form-card input, .form-card textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    margin-top: 0.5srem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.feedback-text {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+}
+
+.social-links {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    gap: 1rem;
 }
 
-.card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.card button {
-    margin-top: 15px;
-    width: 100%;
-}
-
-/* Footer styling */
+/* Footer */
 footer {
-    background-color: var(--card-bg);
-    border-top: 1px solid rgba(0,0,0,0.05);
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
